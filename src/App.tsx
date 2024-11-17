@@ -1,4 +1,5 @@
 import './App.css'
+import './input.css'
 import './output.css'
 import ProductsList from './components/ProductsList'
 import UseState from './components/UseState'
