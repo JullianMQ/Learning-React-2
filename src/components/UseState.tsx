@@ -1,17 +1,12 @@
-import { useState } from 'react'
 import Button from './Button'
 
-const UseState = () => {
-    const [count, setCount] = useState(0)
+type UseStateProps = {
+    count: number
+    handleAdd: () => void
+    handleSubtract: () => void
+}
 
-    function handleAdd() {
-        setCount(count + 1)
-    }
-
-    function handleSubtract() {
-        setCount(count - 1)
-    }
-
+const UseState = ({ count, handleAdd, handleSubtract}: UseStateProps) => {
     return (
         <div className="mt-10">
             <h1 className="text-3xl font-bold">UseState {count}</h1>
@@ -19,8 +14,8 @@ const UseState = () => {
                 <Button onClick={handleAdd}
                     name="Add Count"
                 />
-                <Button onClick={handleSubtract} 
-                    name="Sub Count" 
+                <Button onClick={handleSubtract}
+                    name="Sub Count"
                     color="red"
                     borderColor="red"
                 />
