@@ -1,5 +1,4 @@
 import './App.css'
-import './input.css'
 import './output.css'
 import ProductsList from './components/ProductsList'
 import UseState from './components/UseState'
@@ -19,8 +18,17 @@ function App() {
     return (
         <div className="flex flex-col justify-center items-center">
             <ProductsList />
-            <UseState count={count} handleAdd={handleAdd} handleSubtract={handleSubtract}/>
-            <UseState count={count} handleAdd={handleAdd} handleSubtract={handleSubtract}/>
+            <UseState count={count} handleAdd={handleAdd} handleSubtract={handleSubtract} />
+            <UseState count={count} handleAdd={handleAdd} handleSubtract={handleSubtract} />
+            <a href="tictactoe.html"
+                className="font-bold text-sky-500 underline-from-left">
+                TicTacToe
+            </a>
+
+            <a href="tictactoe.html"
+                className="font-bold text-sky-500 ">
+                TicTacToe
+            </a>
         </div>
     )
 }

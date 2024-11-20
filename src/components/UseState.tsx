@@ -1,6 +1,4 @@
 import Button from './Button'
-import '../input.css'
-import '../output.css'
 
 type UseStateProps = {
     count: number

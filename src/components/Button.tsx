@@ -1,13 +1,11 @@
 // import React from 'react'
 // import clsx from 'clsx'
-import '../input.css'
-import '../output.css'
-
 type ButtonProps = {
     onClick: () => void
     name: string
     color?: "green" | "red" | "blue"
 }
+
 
 const Button = ({ onClick, name = "Change me", color = "green" }: ButtonProps) => {
 
