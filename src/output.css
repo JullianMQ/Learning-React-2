@@ -559,16 +559,16 @@ video {
   margin-right: 2rem;
 }
 
+.ml-8 {
+  margin-left: 2rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
 }
 
 .flex {
@@ -650,6 +650,11 @@ video {
   padding-right: 0.5rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -658,11 +663,6 @@ video {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .font-bold {
@@ -687,6 +687,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .hover\:bg-blue-600:hover {

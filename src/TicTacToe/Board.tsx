@@ -17,17 +17,23 @@ function calculateWinner(squares: string[]) {
         [0, 3, 6],
         [1, 4, 7],
         [2, 5, 8],
-        [0, 4, 8],
         [2, 4, 6],
+        [0, 4, 8],
     ]
 
-    for (let i = 0; i < lines.length; i++) {
-        const [a, b, c] = lines[i]
-        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+    for (let index = 0; index < lines.length; index++) {
+        const [a, b, c] = lines[index]
+        if (squares[a] === squares[b] && squares[b] === squares[c]) {
             return squares[a]
         }
     }
-    return null;
+
+    const isAllFilled = squares.filter(value => value !== "X" && value !== "O")
+    if (isAllFilled.length === 0) {
+        return "No winner"
+    }
+
+    return null
 }
 
 const Board = () => {
