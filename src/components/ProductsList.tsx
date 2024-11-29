@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 
 const ProductsList = () => {
     const products = [
@@ -23,7 +23,8 @@ const ProductsList = () => {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold">Products List</h1>
+            <h1 className="text-3xl font-bold text-red-700">Conditional Styling</h1>
+            <h2 className="text-xl font-bold text-blue-500 uppercase">Products List</h2>
             <ul>{listItems}</ul>
         </div>
     )

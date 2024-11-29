@@ -8,8 +8,8 @@ type UseStateProps = {
 
 const UseState = ({ count, handleAdd, handleSubtract}: UseStateProps) => {
     return (
-        <div className="mt-10">
-            <h1 className="text-3xl font-bold hover:text-sky-800">UseState {count}</h1>
+        <div className="">
+            <h1 className="text-xl font-semibold hover:text-sky-800">UseState {count}</h1>
             <div className="flex gap-6">
                 <Button onClick={handleAdd}
                     name="Add Count"
