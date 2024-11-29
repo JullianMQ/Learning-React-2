@@ -1,11 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
 import Board from './TicTacToe/Board'
+import Navbar from './components/Navbar'
 import './output.css'
 
-createRoot(document.querySelector('#root')!).render(
-    <StrictMode>
-        <Board />
-    </StrictMode>
-)
+const TicTacToe = () => {
+    return (
+        <>
+            <Navbar />
+            <Board />
+        </>
+    )
+}
 
+export default TicTacToe
