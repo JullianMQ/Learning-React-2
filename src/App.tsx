@@ -1,36 +1,21 @@
 import './App.css'
 import './output.css'
-import ProductsList from './components/ProductsList'
-import UseState from './components/UseState'
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import TicTacToe from './TicTacToe'
+import ThinkingInReact from './pages/ThinkingInReact'
 
 function App() {
-    const [count, setCount] = useState(0)
-
-    function handleAdd() {
-        setCount(count + 1)
-    }
-
-    function handleSubtract() {
-        setCount(count - 1)
-    }
-
     return (
-        <div className="flex flex-col justify-center items-center">
-            <ProductsList />
-            <UseState count={count} handleAdd={handleAdd} handleSubtract={handleSubtract} />
-            <UseState count={count} handleAdd={handleAdd} handleSubtract={handleSubtract} />
-            <a href="tictactoe.html"
-                className="font-bold text-sky-500 underline-from-left">
-                TicTacToe
-            </a>
-
-            <a href="tictactoe.html"
-                className="font-bold text-sky-500 ">
-                TicTacToe
-            </a>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/tictactoe" element={<TicTacToe />} />
+                <Route path="/thinkinreact" element={<ThinkingInReact />} />
+            </Routes>
+        </BrowserRouter>
     )
+
 }
 
 export default App
