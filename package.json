@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": " concurrently \"vite --host\" \"pnpx tailwindcss -i ./src/input.css -o ./src/output.css --watch\"",
+    "dev": " concurrently \"vite\" \"pnpx tailwindcss -i ./src/input.css -o ./src/output.css --watch\"",
+    "host": " concurrently \"vite --host\" \"pnpx tailwindcss -i ./src/input.css -o ./src/output.css --watch\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.0"

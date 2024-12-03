@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import TicTacToe from './TicTacToe'
 import ThinkingInReact from './pages/ThinkingInReact'
+import AutoAnimate from './pages/AutoAnimate'
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/tictactoe" element={<TicTacToe />} />
                 <Route path="/thinkinreact" element={<ThinkingInReact />} />
+                <Route path="/autoanimate" element={<AutoAnimate />} />
             </Routes>
         </BrowserRouter>
     )

@@ -9,6 +9,7 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
                 <Link to="/tictactoe">TicTacToe</Link>
                 <Link to="/thinkinreact">Thinking in React</Link>
+                <Link to="/autoanimate">Auto Animate in React</Link>
             </ul>
         </nav>
     )
