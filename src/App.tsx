@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import TicTacToe from './TicTacToe'
 import ThinkingInReact from './pages/ThinkingInReact'
 import AutoAnimate from './pages/AutoAnimate'
+import FramerMotion from './pages/FramerMotion'
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/tictactoe" element={<TicTacToe />} />
                 <Route path="/thinkinreact" element={<ThinkingInReact />} />
                 <Route path="/autoanimate" element={<AutoAnimate />} />
+                <Route path="/framermotion" element={<FramerMotion />} />
             </Routes>
         </BrowserRouter>
     )

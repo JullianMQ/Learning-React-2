@@ -57,7 +57,7 @@ const Button = () => {
       w-32 font-semibold hover:bg-sky-700"
       onClick={reveal}>
         Something</div>
-      <div className={`bg-red-500 p-2 rounded
+      <div className={`bg-red-500 rounded
           ${shown? 'p-2' : 'p-0'}`} ref={parent}>
         {shown && <p className="text-white">Hidden Message</p>}
       </div>
