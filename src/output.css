@@ -562,10 +562,6 @@ video {
   top: 8rem;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -596,16 +592,16 @@ video {
   margin-right: 0.5rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-12 {
-  margin-top: 3rem;
 }
 
 .flex {
@@ -628,6 +624,10 @@ video {
   height: 60svh;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .min-h-12 {
   min-height: 3rem;
 }
@@ -640,28 +640,8 @@ video {
   width: 50%;
 }
 
-.w-12 {
-  width: 3rem;
-}
-
-.w-48 {
-  width: 12rem;
-}
-
-.w-56 {
-  width: 14rem;
-}
-
-.w-64 {
-  width: 16rem;
-}
-
 .w-screen {
   width: 100vw;
-}
-
-.w-0 {
-  width: 0px;
 }
 
 .min-w-12 {
@@ -670,6 +650,14 @@ video {
 
 .max-w-4xl {
   max-width: 56rem;
+}
+
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-col {
@@ -746,9 +734,19 @@ video {
   background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
 }
 
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+
 .bg-green-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(187 247 208 / var(--tw-bg-opacity, 1));
+}
+
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
 }
 
 .bg-green-700 {
@@ -786,11 +784,6 @@ video {
   background-color: rgb(7 89 133 / var(--tw-bg-opacity, 1));
 }
 
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
-}
-
 .p-0 {
   padding: 0px;
 }
@@ -812,8 +805,24 @@ video {
   padding-right: 0.5rem;
 }
 
-.pb-96 {
-  padding-bottom: 24rem;
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
+.pb-56 {
+  padding-bottom: 14rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom;
 }
 
 .text-2xl {
@@ -839,6 +848,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold {
@@ -885,10 +899,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.opacity-0 {
-  opacity: 0;
 }
 
 .filter {

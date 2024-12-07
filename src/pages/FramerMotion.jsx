@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { motion, useInView } from 'motion/react'
-import { useRef } from 'react'
+import { motion } from 'motion/react'
 import { useState } from 'react'
 
 const FramerMotion = () => {
@@ -9,30 +8,33 @@ const FramerMotion = () => {
     return (
         <>
             <Navbar />
-            <div className="flex justify-center gap-32 mb-56 ">
-                <div className="flex flex-col">
-                    <h1 className="text-3xl font-bold">Animate x and y axis</h1>
-                    <motion.div animate={{ x: -20, y: 20 }}
-                        className='w-32 h-32 bg-red-500 rounded' />
+            <div className="pb-56">
+                <div className="flex justify-center gap-32 mb-56 ">
+                    <div className="flex flex-col">
+                        <h1 className="text-3xl font-bold">Animate x and y axis</h1>
+                        <motion.div animate={{ x: -20, y: 20 }}
+                            className='w-32 h-32 bg-red-500 rounded' />
+                    </div>
+
+                    <div className="flex flex-col">
+                        <h1 className="text-3xl font-bold">Animate Scaling</h1>
+                        <motion.div animate={{ scale: 1.2, transition: { duration: 1 } }}
+                            className='w-32 h-32 bg-red-500 rounded relative top-32' />
+                    </div>
                 </div>
 
-                <div className="flex flex-col">
-                    <h1 className="text-3xl font-bold">Animate Scaling</h1>
-                    <motion.div animate={{ scale: 1.2, transition: { duration: 1 } }}
-                        className='w-32 h-32 bg-red-500 rounded relative top-32' />
-                </div>
+                <AnimateOnceInView />
+                <AnimateAlwaysInView />
+                <ButtonDropdown />
+                <Accordion />
             </div>
-
-            <AnimateOnceInView />
-            <AnimateAlwaysInView />
-            <Accordion />
         </>
     )
 }
 // TODO: MAKE AN ACCORDION WITH FRAMER MOTION
 // USE && AND useState like with autoanimation
 
-const Accordion = () => {
+const ButtonDropdown = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const handleClick = () => {
@@ -40,21 +42,43 @@ const Accordion = () => {
     }
 
     return (
-        <div className="mt-12 mx-auto w-screen max-w-4xl pb-96">
+        <div className="mt-12 mx-auto w-screen max-w-4xl pb-20">
             <button className="bg-red-700 rounded p-2 text-white"
                 onClick={handleClick}>
                 Click me
             </button>
-            <motion.div className="bg-green-500 rounded mt-12" 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? 100: 0, padding: isOpen ? 5: 0 }}
-            transition={{ duration: .2 }}
+            <motion.div className="bg-green-500 rounded mt-12"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? 100 : 0, padding: isOpen ? 5 : 0 }}
+                transition={{ duration: .2 }}
             >
                 {isOpen && <p className="text-white">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam amet inventore ex, atque molestiae animi explicabo veritatis voluptates cum architecto quidem omnis minus iste, ab repudiandae maxime ad facere quod.
                 </p>}
             </motion.div>
         </div>
+    )
+}
+
+const Accordion = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    return (
+        <>
+            <motion.div className="border-black bg-gray-800 text-white max-w-[600px] mx-auto p-2 rounded
+                cursor-pointer"
+                animate={{ height: isOpen ? 150 : 40 }}
+                onClick={() => setIsOpen(!isOpen)}>
+                <div className="flex justify-between">
+                    <p className="">Accordion here</p>
+                    {isOpen ? <p className="text-xs align-text-bottom">&#8897;</p> :
+                        <p className="text-xs align-text-bottom">&#8896;</p> }
+
+
+                </div>
+                {isOpen && <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam modi commodi consequuntur, velit fugit saepe sequi placeat accusamus sunt blanditiis repellat deserunt voluptatibus! Nemo rem iure, dolorem numquam commodi non!</p>}
+            </motion.div>
+        </>
     )
 }
 
