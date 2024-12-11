@@ -31,8 +31,6 @@ const FramerMotion = () => {
         </>
     )
 }
-// TODO: MAKE AN ACCORDION WITH FRAMER MOTION
-// USE && AND useState like with autoanimation
 
 const ButtonDropdown = () => {
     const [isOpen, setIsOpen] = useState(false)
