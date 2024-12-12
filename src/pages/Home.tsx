@@ -20,16 +20,16 @@ const Home = () => {
         <>
             <Navbar />
 
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center pb-64">
                 <ProductsList />
-                <h1 className="text-3xl font-bold mt-8 mb-2 text-red-700">useState on one parent</h1>
+                <h1 className="text-3xl font-bold mt-8 mb-2 text-blue-600">useState on one parent</h1>
                 <UseState count={count} handleAdd={handleAdd} handleSubtract={handleSubtract} />
                 <UseState count={count} handleAdd={handleAdd} handleSubtract={handleSubtract} />
 
-                <h1 className="text-3xl font-bold mt-8 mb-2 text-red-700">useEffect</h1>
+                <h1 className="text-3xl font-bold mt-8 mb-2 text-lime-700">useEffect (see logs)</h1>
                 <UsingEffect />
 
-                <h1 className="text-3xl font-bold mt-8 mb-2 text-red-700">useRef</h1>
+                <h1 className="text-3xl font-bold mt-8 mb-2 text-teal-700">useRef</h1>
                 <UsingRef />
             </div>
         </>
@@ -47,23 +47,23 @@ const UsingEffect = () => {
     }, [count, newCount])
 
     return (
-        <div className="py-4 px-8 mb-4 bg-lime-500 grid rounded w-8/12 lg:w-4/12">
-            <p>
+        <div className="pt-2 pb-8 px-8 mb-4 bg-lime-500 grid rounded w-8/12 lg:w-4/12">
+            <p className="p-2">
                 This button increments the count variable which is inside the
                 dependency variable
             </p>
             <button onClick={() => setCount(count + 1)}
                 className={'rounded active:scale-95 p-1 text-white bg-blue-600'}>
-                Click me
+                Add count
             </button>
 
-            <p>
+            <p className="p-2">
                 This button still logs the number even though it changes the new count
                 Because the new count is also added in the dependency array
             </p>
             <button onClick={() => setNewCount(newCount + 1)}
                 className={'rounded active:scale-95 p-1 text-white bg-blue-600'}>
-                Click me
+                Add newCount
             </button>
         </div>
     )
@@ -81,7 +81,7 @@ const UsingRef = () => {
     const handleClick = () => setIsOpen(!isOpen)
 
     return (
-        <div className="rounded border-2 border-teal-600 bg-teal-500 text-white
+        <div className="rounded border-2 p-2 border-teal-600 bg-teal-500 text-white
             w-6/12"
             ref={parent}>
             <h1 onClick={handleClick}
