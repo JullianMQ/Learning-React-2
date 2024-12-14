@@ -7,11 +7,30 @@
 //  otherwise need to be pass as props
 //  NOTE: it is used to avoid 'prop drilling'
 
-import React from 'react'
+import React, { useState } from 'react'
+import Animal from './Animal'
+import { AnimalContext } from './AnimalContext'
 
+export type AnimalType = {
+  animalType: "dog" | "cat" | "fish",
+  name: string,
+}
+
+// Using useState without changing the value
 const UseContext = () => {
+  const [myDog] = useState<AnimalType>({
+    animalType: "dog",
+    name: "jerry"
+  })
+
+  // Do not forget to add the method provider this will make it possible
+  // to use kinda like a react component
   return (
-    <div>UseContext</div>
+    <div>
+      <AnimalContext.Provider value={myDog}>
+        <Animal />
+      </AnimalContext.Provider>
+    </div>
   )
 }
 

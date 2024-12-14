@@ -1,7 +1,7 @@
 // import React from 'react'
 import ProductsList from '../components/ProductsList'
 import UseState from '../components/UseState'
-import UseContext from '../components/UseContext'
+import UseContext from '../components/useContext/UseContext'
 import { useState, useEffect, useRef } from 'react'
 import Navbar from '../components/Navbar'
 import autoAnimate from '@formkit/auto-animate'
@@ -32,6 +32,9 @@ const Home = () => {
 
                 <h1 className="text-3xl font-bold mt-8 mb-2 text-teal-700">useRef</h1>
                 <UsingRef />
+
+                <h1 className="text-3xl font-bold mt-8 mb-2 text-amber-700">useContext</h1>
+                <UseContext />
             </div>
         </>
     )
