@@ -1,6 +1,7 @@
 // import React from 'react'
 import ProductsList from '../components/ProductsList'
 import UseState from '../components/UseState'
+import UseContext from '../components/UseContext'
 import { useState, useEffect, useRef } from 'react'
 import Navbar from '../components/Navbar'
 import autoAnimate from '@formkit/auto-animate'
@@ -70,6 +71,8 @@ const UsingEffect = () => {
 
 }
 
+// Basically useRef acts as a placeholder, in case we want to make an effect on
+// something without knowing yet what to place on the useEffect hook
 const UsingRef = () => {
     const [isOpen, setIsOpen] = useState(false)
     const parent = useRef(null)
@@ -80,7 +83,7 @@ const UsingRef = () => {
 
     const handleClick = () => setIsOpen(!isOpen)
 
-    return (
+return (
         <div className="rounded border-2 p-2 border-teal-600 bg-teal-500 text-white
             w-6/12"
             ref={parent}>
@@ -93,5 +96,86 @@ const UsingRef = () => {
     )
 
 }
+
+// =================================HOOKS TO LEARN=========================================
+//
+// =================================MOST ESSENTIAL=========================================
+// NOTE: 
+// 1. useContext - (../components/UseContext.tsx)
+//
+//  INFO: useContext is used to make components be able to access data that 
+//  otherwise need to be pass as props
+//  it is used to avoid 'prop drilling'
+//
+//
+// NOTE: 
+// 2. useReducer - (../components/UseReducer.tsx)
+//
+// INFO: Why it's essential: Ideal for managing complex state logic, especially when actions and state transitions are involved.
+// How to use it for your movie website:
+//
+//    Manage your movie lists (e.g., adding, removing, updating movies) with a reducer.
+//    Define actions like ADD_MOVIE, REMOVE_MOVIE, and MARK_AS_WATCHED.
+//    Combine it with useContext to create a powerful state management system.
+const UsingReducer = () => {}
+
+// =================================QUERYING FOR POSTGRESQL=========================================
+// ReactQuery or Apollo Client
+// Why they're essential: Handles data fetching, caching, and synchronization for server-side data.
+// How to use them for your movie website:
+//
+//    Fetch movie data from an external API (e.g., TMDB) or your backend.
+//    Cache API responses to avoid redundant requests and keep the UI in sync with the server.
+//    Use useMutation to manage data updates (e.g., adding movies to the backend).
+const UsingQuery = () => {}
+
+// =================================MULTIPAGE WEBAPPS=========================================
+// =================================REACT ROUTER=========================================
+// Why they're essential: Critical for routing and navigation in single-page applications.
+// How to use them for your movie website:
+//
+//    useParams: Access dynamic route parameters, e.g., /movies/:id to display a single movie's details.
+//    useNavigate: Programmatically navigate users, e.g., redirect to the homepage after adding a movie.
+const UsingParams = () => {}
+const UsingNavigate = () => {}
+
+
+// =================================OPTIONAL=========================================
+// =================================PERFORMANCE=========================================
+// Why it's essential: Optimizes performance by memoizing expensive calculations.
+// How to use it for your movie website:
+//
+//    Cache derived data, like filtering movies by status (watched/to-watch) or sorting by rating.
+//    Example: Avoid recalculating the sorted movie list every render unless the movie list changes.
+const UsingMemo = () => {}
+
+// Why it's essential: Prevents unnecessary re-creation of functions, especially when passing them as props.
+// How to use it for your movie website:
+//
+//    Memoize event handlers (e.g., adding or deleting a movie) passed to child components to improve performance.
+const UsingCallback = () => {}
+
+// =================================UPGRADES?=========================================
+// Why it's essential: Runs synchronously after DOM mutations, ideal for measuring layouts or animations.
+// How to use it for your movie website:
+//
+//    Use it to calculate or adjust layout details, such as ensuring UI elements are positioned correctly.
+const UsingLayoutEffect = () => {}
+
+//Why it's essential: Enables exposing specific methods or properties from child components.
+//How to use it for your movie website:
+//
+//    If creating a custom component, like a modal for adding a movie, you can expose methods to control its behavior programmatically (e.g., openModal, closeModal).
+const UsingImperativeHandle = () => {}
+
+//Why they're essential: Improve UI responsiveness during heavy updates.
+//How to use them for your movie website:
+//
+//    useTransition: Manage state updates for non-urgent tasks (e.g., filtering a long list of movies).
+//    useDeferredValue: Defer expensive calculations (e.g., re-rendering a filtered movie list) to keep the UI snappy.
+const UsingTransition = () => {}
+const UsingDeferredValue = () => {}
+// =================================UPGRADES?=========================================
+
 
 export default Home
